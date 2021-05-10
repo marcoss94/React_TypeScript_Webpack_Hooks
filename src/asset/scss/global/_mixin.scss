@@ -1,0 +1,432 @@
+// Box Shadow
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -o-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+// Flex
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin display-flex($flex: flex, $flex-direction: row, $flex-wrap: nowrap) {
+    display: #{'-webkit'}-#{$flex};
+    display: #{'-moz'}-#{$flex};
+    display: #{'-ms'}-#{$flex};
+    display: #{'-o'}-#{$flex};
+    display: $flex;
+    -webkit-flex-direction: $flex-direction;
+    -ms-flex-direction: $flex-direction;
+    flex-direction: $flex-direction;
+    -webkit-flex-wrap: $flex-wrap;
+    -ms-flex-wrap: $flex-wrap;
+    flex-wrap: $flex-wrap;
+}
+
+@mixin flex($flex-grow: 1, $flex-shrink: 0, $flex-basis: auto) {
+    -webkit-flex: $flex-grow $flex-shrink $flex-basis;
+    -ms-flex: $flex-grow $flex-shrink $flex-basis;
+    flex: $flex-grow $flex-shrink $flex-basis;
+}
+
+@mixin justify-content($justify-content) {
+    -webkit-justify-content: $justify-content;
+    justify-content: $justify-content;
+}
+
+@mixin order($val) {
+    -webkit-box-ordinal-group: $val;
+    -moz-box-ordinal-group: $val;
+    -ms-flex-order: $val;
+    -webkit-order: $val;
+    order: $val;
+}
+
+@mixin align-items($argument) {
+    -webkit-box-align: $argument;
+    -webkit-align-items: $argument;
+    -ms-flex-align: $argument;
+    align-items: $argument;
+}
+
+@mixin flex-column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+@mixin flex-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+//Size
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+//Border radius
+@mixin border-radius($radius: $border-radius) {
+    @if $enable-rounded {
+        border-radius: $radius;
+        -webkit-border-radius: $radius;
+        -moz-border-radius: $radius;
+    }
+}
+
+@mixin border-top-radius($radius) {
+    @if $enable-rounded {
+        border-top-left-radius: $radius;
+        -webkit-border-top-left-radius: $radius;
+        -moz-border-top-left-radius: $radius;
+        border-top-left-radius: $radius;
+        -webkit-border-top-right-radius: $radius;
+        -moz-border-top-right-radius: $radius;
+    }
+}
+
+@mixin border-right-radius($radius) {
+    @if $enable-rounded {
+        border-top-right-radius: $radius;
+        -webkit-border-top-right-radius: $radius;
+        -moz-border-top-right-radius: $radius;
+        border-bottom-right-radius: $radius;
+        -webkit-border-bottom-right-radius: $radius;
+        -moz-border-bottom-right-radius: $radius;
+    }
+}
+
+@mixin border-bottom-radius($radius) {
+    @if $enable-rounded {
+        border-bottom-right-radius: $radius;
+        -webkit-border-bottom-right-radius: $radius;
+        -moz-border-bottom-right-radius: $radius;
+        border-bottom-left-radius: $radius;
+        -webkit-border-bottom-left-radius: $radius;
+        -moz-border-bottom-left-radius: $radius;
+    }
+}
+
+@mixin border-left-radius($radius) {
+    @if $enable-rounded {
+        border-top-left-radius: $radius;
+        -webkit-border-top-left-radius: $radius;
+        border-top-left-radius: $radius;
+        -moz-border-bottom-left-radius: $radius;
+        -webkit-border-bottom-left-radius: $radius;
+        -moz-border-bottom-left-radius: $radius;
+    }
+}
+
+// Border
+
+@mixin border($width, $style, $color) {
+    border: $width $style $color;
+}
+
+@mixin border-side($direction, $width, $style, $color) {
+    border-#{$direction}: $width $style $color;
+}
+
+// CSS3 PROPERTIES
+// --------------------------------------------------
+
+@mixin mask($arguments) {
+    -webkit-mask: $arguments;
+    mask: $arguments;
+}
+
+@mixin box_scale($scale) {
+    -webkit-transform: scale($scale);
+    -ms-transform: scale($scale);
+    -moz-transform: scale($scale);
+    transform: scale($scale);
+}
+
+// Single side border-radius
+@mixin border-top-radius($radius) {
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+}
+
+@mixin border-right-radius($radius) {
+    border-bottom-right-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius) {
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+
+@mixin border-left-radius($radius) {
+    border-bottom-left-radius: $radius;
+    border-top-left-radius: $radius;
+}
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+}
+
+// Drop shadows
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+    box-shadow: $shadow;
+}
+
+// Animations
+@mixin animation($properties) {
+    -webkit-animation: $properties;
+    -moz-animation: $properties;
+    -o-animation: $properties;
+    animation: $properties;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+// Transitions
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transition-property($transition-property) {
+    -webkit-transition-property: $transition-property;
+    transition-property: $transition-property;
+}
+
+@mixin transition-delay($transition-delay) {
+    -webkit-transition-delay: $transition-delay;
+    transition-delay: $transition-delay;
+}
+
+@mixin transition-duration($transition-duration) {
+    -webkit-transition-duration: $transition-duration;
+    transition-duration: $transition-duration;
+}
+
+@mixin transition-transform($transition) {
+    -webkit-transition: -webkit-transform $transition;
+    -moz-transition: -moz-transform $transition;
+    -o-transition: -o-transform $transition;
+    transition: transform $transition;
+}
+
+// Transformations
+@mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+    -ms-transform: rotate($degrees); // IE9+
+    transform: rotate($degrees);
+}
+
+@mixin scale($ratio) {
+    -webkit-transform: scale($ratio);
+    -ms-transform: scale($ratio); // IE9+
+    transform: scale($ratio);
+}
+
+@mixin translate($x, $y) {
+    -webkit-transform: translate($x, $y);
+    -ms-transform: translate($x, $y); // IE9+
+    transform: translate($x, $y);
+}
+
+@mixin translateY($y) {
+    -webkit-transform: translateY($y);
+    -ms-transform: translateY($y); // IE9+
+    transform: translateY($y);
+}
+
+@mixin translateX($x) {
+    -webkit-transform: translateX($x);
+    -ms-transform: translateX($x); // IE9+
+    transform: translateX($x);
+}
+
+@mixin skew($x, $y) {
+    -webkit-transform: skew($x, $y);
+    -ms-transform: skewX($x) skewY($y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
+    transform: skew($x, $y);
+}
+
+@mixin translate3d($x, $y, $z) {
+    -webkit-transform: translate3d($x, $y, $z);
+    transform: translate3d($x, $y, $z);
+    -ms-transform: translate($x, $y);
+}
+
+@mixin rotateX($degrees) {
+    -webkit-transform: rotateX($degrees);
+    -ms-transform: rotateX($degrees); // IE9+
+    transform: rotateX($degrees);
+}
+
+@mixin rotateY($degrees) {
+    -webkit-transform: rotateY($degrees);
+    -ms-transform: rotateY($degrees); // IE9+
+    transform: rotateY($degrees);
+}
+
+@mixin perspective($perspective) {
+    -webkit-perspective: $perspective;
+    -moz-perspective: $perspective;
+    perspective: $perspective;
+}
+
+@mixin perspective-origin($perspective) {
+    -webkit-perspective-origin: $perspective;
+    -moz-perspective-origin: $perspective;
+    perspective-origin: $perspective;
+}
+
+@mixin transform-origin($origin) {
+    -webkit-transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+@mixin transform-style($style) {
+    -webkit-transform-style: $style;
+    -moz-transform-style: $style;
+    transform-style: $style;
+}
+
+// Media Querys
+
+// Small devices
+
+@mixin xxs-max {
+    @media (max-width: #{$screen-xxs-max}) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media (min-width: #{$screen-xs-min}) {
+        @content;
+    }
+}
+
+// Medium devices
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+// Large devices
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+// extra large
+@mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+
+// xSmall devices
+@mixin xs-max {
+    @media (max-width: #{$screen-xs-min}) {
+        @content;
+    }
+}
+
+// Small devices
+@mixin sm-max {
+    @media (max-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+// Medium devices
+@mixin md-max {
+    @media (max-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+// Large devices
+@mixin lg-max {
+    @media (max-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+// extra large
+@mixin xl-max {
+    @media (max-width: #{$screen-xl-min}) {
+        @content;
+    }
+}

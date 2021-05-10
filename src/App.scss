@@ -1,0 +1,11 @@
+ $labelColor: greenyellow;
+
+ .app {
+     label {
+         color: $labelColor
+     }
+ }
+
+ .menu-item-active {
+     color: red;
+ }

@@ -1,0 +1,82 @@
+body {
+    font: {
+        family: $font-family-base;
+        size: $font-size-base;
+        weight: $font-weight-base;
+    }
+
+    line-height: $line-height-base;
+    color: $dark-gray;
+    word-break: break-word;
+
+    background: {
+        color: $body-bg;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font: {
+            weight: $font-weight-medium;
+        }
+    }
+
+    h1 {
+        font-size: $h1-font-size;
+    }
+
+    h2 {
+        font-size: $h2-font-size;
+    }
+
+    h3 {
+        font-size: $h3-font-size;
+    }
+
+    h4 {
+        font-size: $h4-font-size;
+    }
+
+    h5 {
+        font-size: $h5-font-size;
+    }
+
+    h6 {
+        font-size: $h6-font-size;
+    }
+
+    .btn-cancel {
+        width: 108px;
+        background-color: $white;
+        border: 1px solid $light-gray;
+        @include border-radius(4px);
+        font-size: $h5-font-size;
+    }
+
+    .btn-save {
+        width: 108px;
+        background-color: $primary;
+        border: 1px solid $primary;
+        @include border-radius(4px);
+        font-size: $h5-font-size;
+    }
+
+    .btn-detail {
+        min-width: auto;
+        background-color: $primary;
+        border: 1px solid $primary;
+        @include border-radius(15px);
+    }
+
+    .btn-edit {
+        min-width: 108px;
+        background-color: $white;
+        border: 1px solid $light-gray;
+        @include border-radius(4px);
+        font-size: $h5-font-size;
+    }
+
+}

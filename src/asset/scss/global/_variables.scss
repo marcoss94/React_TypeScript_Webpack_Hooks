@@ -1,0 +1,73 @@
+// Variables //
+
+// Body
+$body-bg: $light;
+$body-color: $dark-gray;
+
+//Typography
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+$font-family-inter: Inter,
+Apple-System,
+Arial,
+Helvetica,
+'PingFang SC',
+'Hiragino Sans GB',
+'Microsoft YaHei',
+STXihei,
+sans-serif !default;
+
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+
+$text-transform-lowercase: lowercase !important;
+$text-transform-uppercase: uppercase !important;
+$text-transform-capitalize: capitalize !important;
+
+$h1-font-size: 1.5rem !important; //24px
+$h2-font-size: 1.25rem !important; //20px
+$h3-font-size: 1.125rem !important; //18px
+$h4-font-size: 1rem !important; //16px
+$h5-font-size: 0.875rem !important; //14px
+$h6-font-size: 0.75rem !important; //12px
+
+//Base
+$font-family-base: $font-family-inter;
+$font-size-base: 0.875rem !default;
+$font-weight-base: $font-weight-normal !default;
+$line-height-base: 1.2 !default;
+
+//Shadow
+$shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+$tooltip-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);
+
+//Input
+$input-placeholder-color: $light-gray;
+$input-placeholder-icons: $dark-gray;
+
+//Border radius
+$enable-rounded: true !default;
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
+}
+
+// Width
+
+$screen-xxs-max: 767px;
+
+$screen-xs-min: 768px;
+
+$screen-sm-min: 992px;
+
+$screen-md-min: 1200px;
+
+$screen-lg-min: 1366px;
+
+$screen-xl-min: 1920px;
